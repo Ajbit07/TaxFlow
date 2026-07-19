@@ -6,7 +6,7 @@ Built with **Java 21 + Spring Boot 3** on the backend and **React 19 + TypeScrip
 
 ---
 
-## Tech stack
+Tech stack
 
 | Backend | Frontend |
 |---|---|
