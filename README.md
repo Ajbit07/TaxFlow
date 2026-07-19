@@ -2,7 +2,7 @@
 
 GST & Income Tax platform for Indian small businesses — invoicing, inventory, expenses, GST computation (GSTR-style summaries), income-tax estimation, PDF/Excel reports, notifications and a full audit trail.
 
-Built with **Java 21 + Spring Boot 3** on the backend and **React 19 + TypeScript + Vite** on the frontend. No Docker, no cloud services, no external APIs — PostgreSQL and a local disk are the only dependencies.
+Built with **Java 21 + Spring Boot 3** on the backend and **React 19 + TypeScript + Vite** on the frontend.  PostgreSQL and a local disk are the only dependencies.
 
 ---
 
