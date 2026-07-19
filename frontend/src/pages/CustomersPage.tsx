@@ -155,7 +155,7 @@ export default function CustomersPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-400 dark:border-slate-700">
+                <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-400">
                   <th className="py-2 pr-4">Name</th>
                   <th className="py-2 pr-4">GSTIN</th>
                   <th className="py-2 pr-4">Contact</th>
@@ -167,7 +167,7 @@ export default function CustomersPage() {
               </thead>
               <tbody>
                 {data.content.map((customer) => (
-                  <tr key={customer.id} className="border-b border-slate-100 last:border-0 dark:border-slate-800">
+                  <tr key={customer.id} className="border-b border-slate-100 last:border-0">
                     <td className="py-3 pr-4 font-medium">{customer.name}</td>
                     <td className="py-3 pr-4 text-slate-500">{customer.gstin ?? "—"}</td>
                     <td className="py-3 pr-4 text-slate-500">{customer.phone ?? customer.email ?? "—"}</td>
@@ -234,7 +234,7 @@ export default function CustomersPage() {
       </Modal>
 
       <Modal open={!!deleting} onClose={() => setDeleting(null)} title="Delete customer">
-        <p className="text-sm text-slate-600 dark:text-slate-300">
+        <p className="text-sm text-slate-600">
           Delete <strong>{deleting?.name}</strong>? This cannot be undone.
         </p>
         <div className="mt-6 flex justify-end gap-2">

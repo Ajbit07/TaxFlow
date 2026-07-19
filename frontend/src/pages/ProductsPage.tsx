@@ -124,8 +124,8 @@ export default function ProductsPage() {
       </div>
 
       {lowStock.length > 0 && (
-        <Card className="border-amber-300 bg-amber-50 dark:border-amber-700 dark:bg-amber-900/20">
-          <div className="flex items-center gap-2 text-sm text-amber-700 dark:text-amber-300">
+        <Card className="border-amber-300 bg-amber-50">
+          <div className="flex items-center gap-2 text-sm text-amber-700">
             <AlertTriangle className="h-4 w-4 shrink-0" />
             <span>
               <strong>{lowStock.length}</strong> product{lowStock.length > 1 ? "s are" : " is"} low on stock:{" "}
@@ -167,7 +167,7 @@ export default function ProductsPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-400 dark:border-slate-700">
+                <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-400">
                   <th className="py-2 pr-4">Product</th>
                   <th className="py-2 pr-4">SKU / HSN</th>
                   <th className="py-2 pr-4 text-right">GST %</th>
@@ -180,7 +180,7 @@ export default function ProductsPage() {
               </thead>
               <tbody>
                 {data.content.map((product) => (
-                  <tr key={product.id} className="border-b border-slate-100 last:border-0 dark:border-slate-800">
+                  <tr key={product.id} className="border-b border-slate-100 last:border-0">
                     <td className="py-3 pr-4">
                       <p className="font-medium">{product.name}</p>
                       <p className="text-xs text-slate-400">{product.category}</p>
@@ -259,7 +259,7 @@ export default function ProductsPage() {
       </Modal>
 
       <Modal open={!!deleting} onClose={() => setDeleting(null)} title="Delete product">
-        <p className="text-sm text-slate-600 dark:text-slate-300">
+        <p className="text-sm text-slate-600">
           Delete <strong>{deleting?.name}</strong>? This cannot be undone.
         </p>
         <div className="mt-6 flex justify-end gap-2">

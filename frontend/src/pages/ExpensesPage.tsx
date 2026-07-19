@@ -136,7 +136,7 @@ export default function ExpensesPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-400 dark:border-slate-700">
+                <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-400">
                   <th className="py-2 pr-4">Date</th>
                   <th className="py-2 pr-4">Vendor</th>
                   <th className="py-2 pr-4">Category</th>
@@ -147,14 +147,14 @@ export default function ExpensesPage() {
               </thead>
               <tbody>
                 {data.content.map((expense) => (
-                  <tr key={expense.id} className="border-b border-slate-100 last:border-0 dark:border-slate-800">
+                  <tr key={expense.id} className="border-b border-slate-100 last:border-0">
                     <td className="py-3 pr-4 text-slate-500">{formatDate(expense.expenseDate)}</td>
                     <td className="py-3 pr-4">
                       <p className="font-medium">{expense.vendor}</p>
                       {expense.description && <p className="text-xs text-slate-400">{expense.description}</p>}
                     </td>
                     <td className="py-3 pr-4">
-                      <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs dark:bg-slate-800">{expense.category}</span>
+                      <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs">{expense.category}</span>
                     </td>
                     <td className="py-3 pr-4 text-right text-slate-500">{formatMoney(expense.gstAmount)}</td>
                     <td className="py-3 pr-4 text-right font-semibold">{formatMoney(expense.amount)}</td>
@@ -213,7 +213,7 @@ export default function ExpensesPage() {
       </Modal>
 
       <Modal open={!!deleting} onClose={() => setDeleting(null)} title="Delete expense">
-        <p className="text-sm text-slate-600 dark:text-slate-300">
+        <p className="text-sm text-slate-600">
           Delete the {deleting?.category} expense of <strong>{formatMoney(deleting?.amount ?? 0)}</strong> from{" "}
           <strong>{deleting?.vendor}</strong>?
         </p>

@@ -97,7 +97,7 @@ export default function IncomeTaxPage() {
                     <dt className="text-slate-500">Taxable income</dt>
                     <dd className="font-semibold">{formatMoney(result.taxableIncome)}</dd>
                   </div>
-                  <div className="flex justify-between border-t border-slate-200 pt-2 text-base dark:border-slate-700">
+                  <div className="flex justify-between border-t border-slate-200 pt-2 text-base">
                     <dt className="font-semibold">Estimated tax</dt>
                     <dd className="font-bold text-brand-600">{formatMoney(result.estimatedTax)}</dd>
                   </div>
@@ -106,7 +106,7 @@ export default function IncomeTaxPage() {
                     <dd className="font-semibold">{formatMoney(result.advanceTaxDue)}</dd>
                   </div>
                 </dl>
-                <div className="mt-4 rounded-lg bg-slate-50 p-3 text-sm dark:bg-slate-800/50">
+                <div className="mt-4 rounded-lg bg-slate-50 p-3 text-sm">
                   <p className="mb-1 text-xs font-semibold uppercase text-slate-400">Profit & loss</p>
                   {Object.entries(result.profitAndLoss).map(([key, value]) => (
                     <div key={key} className="flex justify-between">
@@ -120,7 +120,7 @@ export default function IncomeTaxPage() {
                 <CardTitle>Tax-saving suggestions</CardTitle>
                 <ul className="space-y-2">
                   {result.taxSavingSuggestions.map((suggestion) => (
-                    <li key={suggestion} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
+                    <li key={suggestion} className="flex items-start gap-2 text-sm text-slate-600">
                       <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
                       {suggestion}
                     </li>

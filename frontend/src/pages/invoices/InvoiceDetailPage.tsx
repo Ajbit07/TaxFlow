@@ -84,7 +84,7 @@ export default function InvoiceDetailPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-400 dark:border-slate-700">
+                <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-400">
                   <th className="py-2 pr-4">Description</th>
                   <th className="py-2 pr-4">HSN</th>
                   <th className="py-2 pr-4 text-right">Qty</th>
@@ -96,7 +96,7 @@ export default function InvoiceDetailPage() {
               </thead>
               <tbody>
                 {invoice.lines.map((line) => (
-                  <tr key={line.id} className="border-b border-slate-100 last:border-0 dark:border-slate-800">
+                  <tr key={line.id} className="border-b border-slate-100 last:border-0">
                     <td className="py-3 pr-4 font-medium">{line.description}</td>
                     <td className="py-3 pr-4 text-slate-500">{line.hsnCode}</td>
                     <td className="py-3 pr-4 text-right">{line.quantity}</td>
@@ -110,7 +110,7 @@ export default function InvoiceDetailPage() {
             </table>
           </div>
           {invoice.notes && (
-            <p className="mt-4 rounded-lg bg-slate-50 p-3 text-xs text-slate-500 dark:bg-slate-800/50">{invoice.notes}</p>
+            <p className="mt-4 rounded-lg bg-slate-50 p-3 text-xs text-slate-500">{invoice.notes}</p>
           )}
         </Card>
 
@@ -134,7 +134,7 @@ export default function InvoiceDetailPage() {
                 <dt className="text-slate-500">Total GST</dt>
                 <dd>{formatMoney(invoice.totalGst)}</dd>
               </div>
-              <div className="flex justify-between border-t border-slate-200 pt-2 text-base font-bold dark:border-slate-700">
+              <div className="flex justify-between border-t border-slate-200 pt-2 text-base font-bold">
                 <dt>Grand total</dt>
                 <dd>{formatMoney(invoice.totalAmount)}</dd>
               </div>
@@ -153,14 +153,14 @@ export default function InvoiceDetailPage() {
           {invoice.qrPayload && (
             <Card>
               <CardTitle>UPI payment link</CardTitle>
-              <code className="block break-all rounded-lg bg-slate-50 p-3 text-xs dark:bg-slate-800/50">{invoice.qrPayload}</code>
+              <code className="block break-all rounded-lg bg-slate-50 p-3 text-xs">{invoice.qrPayload}</code>
             </Card>
           )}
         </div>
       </div>
 
       <Modal open={confirmDelete} onClose={() => setConfirmDelete(false)} title="Delete invoice">
-        <p className="text-sm text-slate-600 dark:text-slate-300">
+        <p className="text-sm text-slate-600">
           Delete <strong>{invoice.invoiceNumber}</strong>? Stock changes from this invoice will be reversed.
         </p>
         <div className="mt-6 flex justify-end gap-2">

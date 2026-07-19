@@ -119,8 +119,8 @@ export default function GstPage() {
       )}
 
       {summary && summary.reminders.length > 0 && (
-        <Card className="border-brand-200 bg-brand-50 dark:border-brand-800 dark:bg-brand-900/20">
-          <ul className="space-y-1 text-sm text-brand-800 dark:text-brand-200">
+        <Card className="border-brand-200 bg-brand-50">
+          <ul className="space-y-1 text-sm text-brand-800">
             {summary.reminders.map((reminder) => (
               <li key={reminder} className="flex items-center gap-2">
                 <Banknote className="h-4 w-4 shrink-0" /> {reminder}
@@ -143,7 +143,7 @@ export default function GstPage() {
                       ? "flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs font-bold text-white"
                       : index === wizardStep
                         ? "flex h-6 w-6 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white"
-                        : "flex h-6 w-6 items-center justify-center rounded-full bg-slate-200 text-xs font-bold text-slate-500 dark:bg-slate-700"
+                        : "flex h-6 w-6 items-center justify-center rounded-full bg-slate-200 text-xs font-bold text-slate-500"
                   }
                 >
                   {index < wizardStep ? "✓" : index + 1}
@@ -177,13 +177,13 @@ export default function GstPage() {
         <Card>
           <CardTitle>Compliance checks</CardTitle>
           {compliance.length === 0 ? (
-            <div className="flex items-center gap-2 rounded-lg bg-emerald-50 p-4 text-sm text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-300">
+            <div className="flex items-center gap-2 rounded-lg bg-emerald-50 p-4 text-sm text-emerald-700">
               <CheckCircle2 className="h-5 w-5" /> All checks passed. You are ready to file.
             </div>
           ) : (
             <ul className="max-h-64 space-y-2 overflow-y-auto">
               {compliance.map((issue, index) => (
-                <li key={index} className="flex items-start gap-2 rounded-lg border border-slate-100 p-3 text-sm dark:border-slate-800">
+                <li key={index} className="flex items-start gap-2 rounded-lg border border-slate-100 p-3 text-sm">
                   <ShieldAlert
                     className={issue.severity === "ERROR" ? "h-4 w-4 shrink-0 text-rose-500" : "h-4 w-4 shrink-0 text-amber-500"}
                   />
@@ -192,7 +192,7 @@ export default function GstPage() {
                       <span className="text-xs font-semibold text-slate-500">{issue.entity}</span>
                       <Badge value={issue.severity} />
                     </div>
-                    <p className="text-slate-600 dark:text-slate-300">{issue.message}</p>
+                    <p className="text-slate-600">{issue.message}</p>
                   </div>
                 </li>
               ))}
@@ -215,7 +215,7 @@ export default function GstPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-400 dark:border-slate-700">
+                <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-400">
                   <th className="py-2 pr-4">Type</th>
                   <th className="py-2 pr-4">Period</th>
                   <th className="py-2 pr-4">Status</th>
@@ -227,7 +227,7 @@ export default function GstPage() {
               </thead>
               <tbody>
                 {filings.content.map((filing) => (
-                  <tr key={filing.id} className="border-b border-slate-100 last:border-0 dark:border-slate-800">
+                  <tr key={filing.id} className="border-b border-slate-100 last:border-0">
                     <td className="py-3 pr-4 font-medium">{filing.filingType.replaceAll("_", " ")}</td>
                     <td className="py-3 pr-4 text-slate-500">
                       {formatDate(filing.periodStart)} → {formatDate(filing.periodEnd)}
@@ -236,7 +236,7 @@ export default function GstPage() {
                       <Badge value={filing.status} />
                     </td>
                     <td className="py-3 pr-4">
-                      <div className="h-2 w-24 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+                      <div className="h-2 w-24 overflow-hidden rounded-full bg-slate-200">
                         <div className="h-full rounded-full bg-brand-500" style={{ width: `${filing.progressPercent}%` }} />
                       </div>
                     </td>

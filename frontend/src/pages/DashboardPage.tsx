@@ -25,7 +25,7 @@ const PIE_COLORS = ["#28706b", "#4fa9a0", "#b45309", "#7c6f64", "#3b5b92", "#9a3
 function StatCard({ title, value, icon, positive }: { title: string; value: string; icon: React.ReactNode; positive?: boolean }) {
   return (
     <Card className="flex items-center gap-4">
-      <div className="rounded-xl bg-brand-50 p-3 text-brand-600 dark:bg-brand-900/30">{icon}</div>
+      <div className="rounded-xl bg-brand-50 p-3 text-brand-600">{icon}</div>
       <div className="min-w-0">
         <p className="truncate text-xs text-slate-500">{title}</p>
         <p className="truncate text-lg font-bold">{value}</p>
@@ -76,10 +76,10 @@ export default function DashboardPage() {
           <span
             className={
               data.healthScore >= 80
-                ? "rounded-full bg-emerald-100 px-3 py-1 font-bold text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300"
+                ? "rounded-full bg-emerald-100 px-3 py-1 font-bold text-emerald-700"
                 : data.healthScore >= 50
-                  ? "rounded-full bg-amber-100 px-3 py-1 font-bold text-amber-700 dark:bg-amber-900/40 dark:text-amber-300"
-                  : "rounded-full bg-rose-100 px-3 py-1 font-bold text-rose-700 dark:bg-rose-900/40 dark:text-rose-300"
+                  ? "rounded-full bg-amber-100 px-3 py-1 font-bold text-amber-700"
+                  : "rounded-full bg-rose-100 px-3 py-1 font-bold text-rose-700"
             }
           >
             {data.healthScore}/100
@@ -156,7 +156,7 @@ export default function DashboardPage() {
           <CardTitle>Insights</CardTitle>
           <ul className="space-y-3">
             {data.insights.map((insight) => (
-              <li key={insight.title} className="rounded-lg border border-slate-100 p-3 dark:border-slate-800">
+              <li key={insight.title} className="rounded-lg border border-slate-100 p-3">
                 <div className="flex items-center justify-between">
                   <p className="text-xs font-semibold text-slate-500">{insight.title}</p>
                   <Badge value={insight.severity} />

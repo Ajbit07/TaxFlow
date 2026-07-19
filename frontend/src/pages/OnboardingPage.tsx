@@ -24,13 +24,12 @@ export default function OnboardingPage() {
   });
 
   return (
-    <div className="mx-auto flex min-h-screen max-w-2xl flex-col justify-center p-6">
+    <div className="mx-auto flex min-h-screen max-w-2xl animate-page-in flex-col justify-center p-6">
       <div className="mb-6">
-        <p className="mb-4 font-display text-lg font-bold tracking-tight text-brand-700 dark:text-brand-300">TaxFlow</p>
         <h1 className="text-2xl font-bold">Set up your business</h1>
         <p className="text-sm text-slate-500">This powers your invoices, GST reports and tax estimates.</p>
       </div>
-      <div className="rounded-lg border border-slate-200 border-t-4 border-t-brand-600 bg-white p-6 shadow-sm dark:border-slate-800 dark:border-t-brand-500 dark:bg-slate-900">
+      <div className="rounded-lg border border-slate-200 border-t-4 border-t-brand-600 bg-white p-6 shadow-sm">
         <BusinessForm onSubmit={(body) => create.mutate(body)} submitting={create.isPending} submitLabel="Create business" />
       </div>
     </div>

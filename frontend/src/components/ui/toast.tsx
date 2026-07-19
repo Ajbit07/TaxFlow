@@ -53,11 +53,11 @@ export function ToastProvider({ children }: { children: ReactNode }) {
               exit={{ opacity: 0, x: 40 }}
               className={cn(
                 "pointer-events-auto flex items-start gap-3 rounded-lg border bg-white p-3 shadow-lg",
-                "dark:border-slate-700 dark:bg-slate-900",
+                "",
               )}
             >
               {icons[t.kind]}
-              <p className="text-sm text-slate-700 dark:text-slate-200">{t.message}</p>
+              <p className="text-sm text-slate-700">{t.message}</p>
             </motion.div>
           ))}
         </AnimatePresence>

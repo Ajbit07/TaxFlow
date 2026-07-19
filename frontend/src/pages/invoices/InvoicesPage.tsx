@@ -93,7 +93,7 @@ export default function InvoicesPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-400 dark:border-slate-700">
+                <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-400">
                   <th className="py-2 pr-4">Invoice</th>
                   <th className="py-2 pr-4">Customer</th>
                   <th className="py-2 pr-4">Date</th>
@@ -108,7 +108,7 @@ export default function InvoicesPage() {
                   <tr
                     key={invoice.id}
                     onClick={() => navigate(`/invoices/${invoice.id}`)}
-                    className="cursor-pointer border-b border-slate-100 last:border-0 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-800/50"
+                    className="cursor-pointer border-b border-slate-100 last:border-0 hover:bg-slate-50"
                   >
                     <td className="py-3 pr-4">
                       <p className="font-medium">{invoice.invoiceNumber}</p>

@@ -244,7 +244,7 @@ export default function InvoiceFormPage() {
             const taxable = (Number(line?.quantity) || 0) * (Number(line?.unitPrice) || 0);
             const lineGst = (taxable * (Number(line?.gstRate) || 0)) / 100;
             return (
-              <div key={field.id} className="grid items-end gap-2 rounded-lg border border-slate-100 p-3 dark:border-slate-800 md:grid-cols-[1.5fr_2fr_1fr_0.8fr_1fr_0.8fr_1.2fr_auto]">
+              <div key={field.id} className="grid items-end gap-2 rounded-lg border border-slate-100 p-3 md:grid-cols-[1.5fr_2fr_1fr_0.8fr_1fr_0.8fr_1.2fr_auto]">
                 <Field label="Product">
                   <Select value={line?.productId ?? ""} onChange={(e) => applyProduct(index, e.target.value)}>
                     <option value="">Custom item</option>
@@ -282,7 +282,7 @@ export default function InvoiceFormPage() {
           })}
         </div>
 
-        <div className="mt-4 ml-auto w-full max-w-xs space-y-1 rounded-lg bg-slate-50 p-4 text-sm dark:bg-slate-800/50">
+        <div className="mt-4 ml-auto w-full max-w-xs space-y-1 rounded-lg bg-slate-50 p-4 text-sm">
           <div className="flex justify-between">
             <span className="text-slate-500">Subtotal</span>
             <span>{formatMoney(totals.subtotal)}</span>
@@ -291,7 +291,7 @@ export default function InvoiceFormPage() {
             <span className="text-slate-500">GST</span>
             <span>{formatMoney(totals.gst)}</span>
           </div>
-          <div className="flex justify-between border-t border-slate-200 pt-1 font-bold dark:border-slate-700">
+          <div className="flex justify-between border-t border-slate-200 pt-1 font-bold">
             <span>Grand total</span>
             <span>{formatMoney(totals.total)}</span>
           </div>

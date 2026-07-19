@@ -32,10 +32,10 @@ export default function ForgotPasswordPage() {
     <AuthShell title="Reset your password" subtitle="We will issue a reset token for your account.">
       {resetToken ? (
         <div className="space-y-4">
-          <p className="text-sm text-slate-600 dark:text-slate-300">
+          <p className="text-sm text-slate-600">
             Your reset token has been issued. Use it on the reset page:
           </p>
-          <code className="block break-all rounded-lg bg-slate-100 p-3 text-xs dark:bg-slate-800">{resetToken}</code>
+          <code className="block break-all rounded-lg bg-slate-100 p-3 text-xs">{resetToken}</code>
           <Link to={`/reset-password?token=${resetToken}`}>
             <Button className="w-full">Continue to reset</Button>
           </Link>

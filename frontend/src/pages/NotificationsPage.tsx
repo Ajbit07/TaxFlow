@@ -45,10 +45,10 @@ export default function NotificationsPage() {
             subtitle="GST due dates, low stock and overdue invoice alerts will appear here."
           />
         ) : (
-          <ul className="divide-y divide-slate-100 dark:divide-slate-800">
+          <ul className="divide-y divide-slate-100">
             {data.content.map((notification) => (
-              <li key={notification.id} className={cn("flex items-start gap-3 py-4", !notification.readFlag && "bg-brand-50/40 dark:bg-brand-900/10")}>
-                <span className="mt-1 rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-500 dark:bg-slate-800">
+              <li key={notification.id} className={cn("flex items-start gap-3 py-4", !notification.readFlag && "bg-brand-50/40")}>
+                <span className="mt-1 rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-500">
                   {notification.type.replaceAll("_", " ")}
                 </span>
                 <div className="min-w-0 flex-1">

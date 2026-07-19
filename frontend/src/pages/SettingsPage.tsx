@@ -91,7 +91,7 @@ export default function SettingsPage() {
     <div className="space-y-4">
       <h1 className="text-2xl font-bold">Settings</h1>
 
-      <div className="flex gap-1 border-b border-slate-200 dark:border-slate-800">
+      <div className="flex gap-1 border-b border-slate-200">
         {tabs.map((t) => (
           <button
             key={t.id}
@@ -100,7 +100,7 @@ export default function SettingsPage() {
               "border-b-2 px-4 py-2 text-sm font-medium transition-colors",
               tab === t.id
                 ? "border-brand-600 text-brand-600"
-                : "border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300",
+                : "border-transparent text-slate-500 hover:text-slate-700",
             )}
           >
             {t.label}
@@ -125,14 +125,14 @@ export default function SettingsPage() {
           <CardTitle>Assign an employee or accountant</CardTitle>
           <p className="mb-4 text-sm text-slate-500">
             Grant scoped access to this business. If the email is new, an employee account is created with the default
-            password <code className="rounded bg-slate-100 px-1 dark:bg-slate-800">TaxFlow@123</code> (they should change it after first login).
+            password <code className="rounded bg-slate-100 px-1">TaxFlow@123</code> (they should change it after first login).
           </p>
           <form onSubmit={memberForm.handleSubmit((values) => assign.mutate(values))} className="space-y-4">
             <Field label="Employee email" error={memberForm.formState.errors.email?.message}>
               <Input type="email" placeholder="accountant@firm.in" {...memberForm.register("email")} />
             </Field>
             <div>
-              <p className="mb-2 text-xs font-medium text-slate-600 dark:text-slate-300">Allowed areas</p>
+              <p className="mb-2 text-xs font-medium text-slate-600">Allowed areas</p>
               <div className="flex flex-wrap gap-2">
                 {SCOPES.map((scope) => (
                   <button
@@ -142,8 +142,8 @@ export default function SettingsPage() {
                     className={cn(
                       "rounded-full border px-3 py-1 text-xs font-medium transition-colors",
                       selectedScopes.includes(scope)
-                        ? "border-brand-600 bg-brand-50 text-brand-700 dark:bg-brand-900/30 dark:text-brand-300"
-                        : "border-slate-300 text-slate-500 hover:border-slate-400 dark:border-slate-600",
+                        ? "border-brand-600 bg-brand-50 text-brand-700"
+                        : "border-slate-300 text-slate-500 hover:border-slate-400",
                     )}
                   >
                     {scope.replaceAll("_", " ")}
@@ -188,7 +188,7 @@ export default function SettingsPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-400 dark:border-slate-700">
+                  <tr className="border-b border-slate-200 text-left text-xs uppercase tracking-wide text-slate-400">
                     <th className="py-2 pr-4">Time</th>
                     <th className="py-2 pr-4">Action</th>
                     <th className="py-2 pr-4">Entity</th>
@@ -198,7 +198,7 @@ export default function SettingsPage() {
                 </thead>
                 <tbody>
                   {audit?.content.map((entry) => (
-                    <tr key={entry.id} className="border-b border-slate-100 last:border-0 dark:border-slate-800">
+                    <tr key={entry.id} className="border-b border-slate-100 last:border-0">
                       <td className="py-2 pr-4 text-xs text-slate-500">{formatDateTime(entry.actionTime)}</td>
                       <td className="py-2 pr-4 font-medium">{entry.action}</td>
                       <td className="py-2 pr-4 text-slate-500">{entry.entityType}</td>

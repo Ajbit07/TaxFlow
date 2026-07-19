@@ -5,16 +5,21 @@
 @layer base {
   html {
     @apply antialiased;
+    scroll-behavior: smooth;
   }
   body {
-    @apply bg-[#f7f6f2] text-slate-900 dark:bg-[#101413] dark:text-slate-100;
+    @apply bg-[#f7f6f2] text-slate-900;
   }
   h1,
   h2 {
-    @apply font-display tracking-tight;
+    @apply tracking-tight;
   }
   ::selection {
     @apply bg-brand-200 text-brand-900;
+  }
+  a,
+  button {
+    @apply transition-colors duration-150;
   }
 }
 
@@ -24,6 +29,23 @@
     height: 6px;
   }
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-slate-300 dark:bg-slate-700;
+    @apply rounded-full bg-slate-300;
+  }
+
+  /* Soft lift on hover — used for cards */
+  .hover-lift {
+    @apply transition-all duration-200;
+  }
+  .hover-lift:hover {
+    @apply -translate-y-0.5 shadow-md;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
